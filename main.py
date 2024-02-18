@@ -21,6 +21,7 @@ def check_gpu_availability(num_gpus=2):
 
             # Check if any GPU is free
             for gpu in gpus:
+                print(f'{gpu.id} using : {gpu.memoryUsed}')
                 if gpu.memoryUsed == 0 and gpu.id not in free_gpu_ids:
                     free_gpu_ids.append(gpu.id)
                     if len(free_gpu_ids) == num_gpus:
